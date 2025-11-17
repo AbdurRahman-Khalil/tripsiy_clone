@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import toast from "react-hot-toast";
+import { AnimatePresence, motion } from 'framer-motion';
 
 import { PackagesFilter } from './packages_filter/PackagesFilter';
 import { DestinationCard } from './DestinationCard';
@@ -107,18 +108,20 @@ export const AllDestinations = () => {
                 </div>
             )}
 
-            <div id="all-destinations-container" className="flex justify-center items-center flex-wrap gap-x-10 gap-y-12 mt-20">
-                {
-                    packagesToDisplay.map(pkg => (
-                        <DestinationCard
-                            key={pkg?.id}
-                            img={pkg?.images[0].url}
-                            title={pkg?.titles[0]}
-                            description={pkg?.description}
-                        />
-                    ))
-                }
-            </div>
+            <motion.div id="all-destinations-container" layout className="flex justify-center items-center flex-wrap gap-x-10 gap-y-12 mt-20">
+                <AnimatePresence>
+                    {
+                        packagesToDisplay.map(pkg => (
+                            <DestinationCard
+                                key={pkg?.id}
+                                img={pkg?.images[0].url}
+                                title={pkg?.titles[0]}
+                                description={pkg?.description}
+                            />
+                        ))
+                    }
+                </AnimatePresence>
+            </motion.div>
         </section>
     );
 };

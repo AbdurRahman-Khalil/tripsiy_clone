@@ -1,7 +1,10 @@
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
+
 import { Button } from '../../custom/Button';
 
 import generateSlug from '../../../utils/generateSlug';
-import { Link } from 'react-router-dom';
+
 
 
 export const DestinationCard = ({ img, title, description }) => {
@@ -9,7 +12,24 @@ export const DestinationCard = ({ img, title, description }) => {
 
 
     return (
-        <div className="w-[330px] h-[410px] rounded-2xl shadow-lg bg-white group overflow-hidden">
+        <motion.div
+            layout
+            initial={{ opacity: 0.33 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.33 }}
+            transition={{
+                opacity: {
+                    duration: 0.5,
+                    ease: [0.4, 0, 0.2, 1],
+                },
+                // scale: {
+                //     duration: 0.4,
+                //     ease: [0.25, 1, 0.5, 1],
+                // },
+                // delay: 0.1
+            }}
+            className="w-[330px] h-[410px] rounded-2xl shadow-lg bg-white group overflow-hidden"
+        >
             <Link to={`/packages/${sluggedTitle}`}>
                 <div className="w-[330px] h-[258px] shadow-md overflow-hidden">
                     <img
@@ -28,6 +48,6 @@ export const DestinationCard = ({ img, title, description }) => {
                     btnText="View Packages"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };

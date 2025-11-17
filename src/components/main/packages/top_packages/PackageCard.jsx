@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { motion } from 'framer-motion';
 
 import { Button } from "../../../custom/Button";
 import { RenderStars } from "../../../custom/RenderStars";
@@ -6,11 +7,24 @@ import { RenderStars } from "../../../custom/RenderStars";
 import generateSlug from "../../../../utils/generateSlug";
 
 
+
 export const PackageCard = ({ img, title, shortDescription, duration, price, ratings }) => {
     const sluggedTitle = generateSlug(title);
 
     return (
-        <div className="w-[320px] h-fit rounded-2xl bg-[#FFFFFF] shadow-md group border border-black/10 overflow-hidden">
+        <motion.div
+            layout
+            initial={{ opacity: 0.33 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0.33 }}
+            transition={{
+                opacity: {
+                    duration: 0.5,
+                    ease: [0.4, 0, 0.2, 1],
+                }
+            }}
+            className="w-[320px] h-fit rounded-2xl bg-[#FFFFFF] shadow-md group border border-black/10 overflow-hidden"
+        >
             <Link to={`/packages/${sluggedTitle}`}>
                 <div className="w-[320px] h-[271px] rounded-t-2xl shadow-md overflow-hidden">
                     <img
@@ -40,6 +54,6 @@ export const PackageCard = ({ img, title, shortDescription, duration, price, rat
                     btnText="View Details"
                 />
             </div>
-        </div>
+        </motion.div>
     );
 };

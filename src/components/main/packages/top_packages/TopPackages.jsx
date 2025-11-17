@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react';
 
+import { AnimatePresence, motion } from 'framer-motion';
+
 import { PackageCard } from './PackageCard';
 import { PackagesFilter } from './packages_filters/PackagesFilter';
 
@@ -52,7 +54,6 @@ export const TopPackages = () => {
 
         // window.scrollTo({ top: elementPosition - offset, behavior: "smooth", });
 
-
     }, [selectedRegion, selectedCategory, selectedPriceRange, allPackages]);
 
     const handleReset = () => {
@@ -65,8 +66,6 @@ export const TopPackages = () => {
 
     const packagesToDisplay = isFiltered ? filteredPackages : allPackages;
     const count = packagesToDisplay.length;
-
-
 
 
     return (
@@ -101,21 +100,23 @@ export const TopPackages = () => {
                     </div>
                 )}
 
-                <div className="top-packages-container flex justify-center items-center flex-wrap gap-x-8 gap-y-12 mt-16">
-                    {
-                        packagesToDisplay.map(pkg => (
-                            <PackageCard
-                                key={pkg.id}
-                                img={pkg.images[0].url}
-                                title={pkg.titles[0]}
-                                shortDescription={pkg.short_description}
-                                duration={pkg.about.duration}
-                                price={pkg.price}
-                                ratings={pkg.ratings}
-                            />
-                        ))
-                    }
-                </div>
+                <motion.div layout className="top-packages-container flex justify-center items-center flex-wrap gap-x-8 gap-y-12 mt-16">
+                    <AnimatePresence>
+                        {
+                            packagesToDisplay.map(pkg => (
+                                <PackageCard
+                                    key={pkg.id}
+                                    img={pkg.images[0].url}
+                                    title={pkg.titles[0]}
+                                    shortDescription={pkg.short_description}
+                                    duration={pkg.about.duration}
+                                    price={pkg.price}
+                                    ratings={pkg.ratings}
+                                />
+                            ))
+                        }
+                    </AnimatePresence>
+                </motion.div>
             </div>
         </section>
     );
