@@ -9,9 +9,9 @@ export const FeaturedOffers = () => {
     const findPackageByTitle = (title) =>
         allPackages.find(item => item.titles.some(t => t === title));
 
-    const packageNames = ["Greece", "Maldives"];
+    const packageTitles = ["Greece", "Maldives"];
 
-    const [greece, maldives] = packageNames.map(findPackageByTitle);
+    const [greece, maldives] = packageTitles.map(findPackageByTitle);
 
     const featOffers = [
         {

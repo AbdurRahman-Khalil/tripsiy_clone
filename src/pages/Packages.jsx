@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-import { Hero } from "../components/main/packages/hero/Hero";
+import { Hero } from "../components/main/packages/Hero";
 import { TopPackages } from "../components/main/packages/top_packages/TopPackages";
 import { FeaturedOffers } from "../components/main/packages/featured_offers/FeaturedOffers";
 import { CTA } from "../components/custom/CTA";

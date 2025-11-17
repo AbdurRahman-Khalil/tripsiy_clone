@@ -1,7 +1,10 @@
 import { useState } from "react";
 
+import arrowDownIcon from "../../../assets/svgs/packages/lgray_angle_arrow_down.svg";
+
 
 export const FloatingField = ({
+    fieldStyles,
     label,
     type = "text",
     name,
@@ -9,7 +12,7 @@ export const FloatingField = ({
     value,
     setValue,
 }) => {
-    
+
     const [focused, setFocused] = useState(false);
 
     return (
@@ -29,9 +32,9 @@ export const FloatingField = ({
                 />
             ) : (
                 <input
-                    className="peer w-full h-[73px] pl-5 pt-4 rounded-lg text-xl bg-[#F7F6F6]/[0.22] 
+                    className={`peer ${fieldStyles} rounded-lg text-xl bg-[#F7F6F6]/[0.22] 
                         ring-1 ring-[#000000]/[0.19] shadow outline-none 
-                        focus:ring-2 focus:ring-[hsl(39,79%,50%)] transition-all duration-200 ease-linear"
+                        focus:ring-2 focus:ring-[hsl(39,79%,50%)] transition-all duration-200 ease-linear`}
                     type={type}
                     name={name}
                     placeholder=""
@@ -44,16 +47,28 @@ export const FloatingField = ({
             )}
 
             <label
-                className={
-                    "absolute left-5 transition-all duration-200 ease-linear pointer-events-none " +
-                    (focused || value
-                        ? "top-2.5 text-sm text-[hsl(39,79%,50%)]"
+                className={`absolute transition-all duration-200 ease-linear pointer-events-none 
+                    ${focused || value
+                        ? type === "date"
+                            ? "top-4"
+                            : "top-2.5 text-sm text-[hsl(39,79%,50%)]"
                         : textarea
-                            ? "top-3.5 text-xl text-black/50"
-                            : "top-1/2 -translate-y-1/2 text-xl text-black/35")
-                }
+                            ? "top-3.5 text-xl text-black/40"
+                            : type === "date"
+                                ? "top-4"
+                                : "top-1/2 -translate-y-1/2 text-xl text-black/40"
+                    }
+                    ${type === "date"
+                        ? "right-2.5"
+                        : "left-5"
+                    }
+                `}
             >
-                {label}
+                {
+                    type === "date"
+                        ? <img src={arrowDownIcon} alt="arrow down icon" />
+                        : label
+                }
             </label>
         </div>
     );

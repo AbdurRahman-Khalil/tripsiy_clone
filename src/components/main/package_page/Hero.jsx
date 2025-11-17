@@ -12,7 +12,7 @@ export const Hero = ({ packageHeroBg, title, description }) => {
                     backgroundPosition: "center",
                 }}
             >
-                <div className="absolute inset-0 flex justify-center items-center bg-[hsla(0,0%,0%,0.5)]">
+                <div className="absolute inset-0 flex justify-center items-center bg-[hsla(0,0%,0%,0.5)] px-9 sm:px-14 md:px-20">
                     {/* bg-gradient-to-r from-[hsla(0,0%,0%,0.4)] to-[hsla(0,0%,0%,0.25)] */}
                     <div className="text-center">
                         <h1 id="hero-heading" className="text-[2.5rem] font-bold tracking-[0.5%] text-white">

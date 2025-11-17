@@ -67,7 +67,9 @@ export const packagesData = [
             { url: australiaImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 9000,
+        price: 1000,
+        category: "Adventure",
+        region: "Oceania",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -110,7 +112,7 @@ export const packagesData = [
     },
     {
         id: 2,
-        titles: ["Bali", "Luxury Island Escape"],
+        titles: ["Bali", "Luxury Island Escape", "Bali Escape"],
         description: "A tropical haven of beaches and tranquility — where every moment feels magical.",
         short_description: "Tropical Bliss Awaits",
         hero_image: baliHeroImg,
@@ -122,7 +124,9 @@ export const packagesData = [
             { url: baliImg5 }
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 5000,
+        price: 1000,
+        category: "Adventure",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -174,7 +178,9 @@ export const packagesData = [
             { url: cappadociaImg2 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 6000,
+        price: 1500,
+        category: "Adventure",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -218,14 +224,16 @@ export const packagesData = [
     {
         id: 4,
         titles: ["Costa Rica"],
-        description: "Wild Rainforests & Volcano Thrills and Wild Rainforests & Volcano Thrills and wild Rainforests.",
+        description: "Wild Rainforests & Volcano Thrills and Wild Rainforests & Volcano Thrills.",
         short_description: "Wild Rainforests & Volcano Thrills",
         hero_image: costaRicaHeroImg,
         images: [
             { url: costaRicaImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 7500,
+        price: 1500,
+        category: "Luxury",
+        region: "Central America",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -279,7 +287,9 @@ export const packagesData = [
             { url: dubaiImg4 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 5000,
+        price: 3000,
+        category: "Luxury",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -330,7 +340,9 @@ export const packagesData = [
             { url: egyptImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 5500,
+        price: 3000,
+        category: "Luxury",
+        region: "Africa",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -374,7 +386,7 @@ export const packagesData = [
     {
         id: 7,
         titles: ["Greece", "Romantic Greek Getaway", "Summer in Santorini — 20% Off!"],
-        description: "Limited-time offer valid till July 31.",
+        description: "Limited-time offer on Summer in Santorini 20% Off valid till July 31.",
         short_description: "Limited-time offer valid",
         hero_image: greeceHeroImg,
         images: [
@@ -382,7 +394,9 @@ export const packagesData = [
             { url: greeceImg2 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 5700,
+        price: 3500,
+        category: "Family",
+        region: "Europe",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -433,7 +447,9 @@ export const packagesData = [
             { url: istanbulImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 8000,
+        price: 3500,
+        category: "Family",
+        region: "Europe",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -484,7 +500,9 @@ export const packagesData = [
             { url: kenyaImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 4500,
+        price: 4000,
+        category: "Family",
+        region: "Africa",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -536,7 +554,9 @@ export const packagesData = [
             { url: kyotoImg2 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 6500,
+        price: 4000,
+        category: "Honeymoon",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -580,7 +600,7 @@ export const packagesData = [
     {
         id: 11,
         titles: ["Maldives", "Maldives Honeymoon Escape", "Maldives Honeymoon Escape — 15% Off"],
-        description: "Enjoy beachfront villas with romantic private dinners.",
+        description: "Enjoy beachfront villas for Honeymoon with romantic private dinners.",
         short_description: "Paradise in Every Wave",
         hero_image: maldivesHeroImg,
         images: [
@@ -588,7 +608,9 @@ export const packagesData = [
             { url: maldivesImg2 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 7500,
+        price: 4500,
+        category: "Honeymoon",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -639,7 +661,9 @@ export const packagesData = [
             { url: nepalImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 5500,
+        price: 4500,
+        category: "Honeymoon",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -690,7 +714,9 @@ export const packagesData = [
             { url: newyorkImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 6500,
+        price: 5000,
+        category: "Nature",
+        region: "North America",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -741,7 +767,9 @@ export const packagesData = [
             { url: newzealndImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 8500,
+        price: 5000,
+        category: "Nature",
+        region: "Oceania",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -794,7 +822,9 @@ export const packagesData = [
             { url: parisImg3 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 7500,
+        price: 5500,
+        category: "Nature",
+        region: "Europe",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -845,7 +875,9 @@ export const packagesData = [
             { url: srilankaImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 6500,
+        price: 5500,
+        category: "Cultural",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -896,7 +928,9 @@ export const packagesData = [
             { url: switzerlandImg },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 9500,
+        price: 6000,
+        category: "Cultural",
+        region: "Europe",
         about: {
             duration: "8 Days 7 Nights",
             days: [
@@ -948,7 +982,9 @@ export const packagesData = [
             { url: thailandImg2 },
         ],
         highlightedPlaces: ["Queenstown", "Rotorua", "Milford Sound", "Hobbiton Village"],
-        price: 7500,
+        price: 6000,
+        category: "Cultural",
+        region: "Asia",
         about: {
             duration: "8 Days 7 Nights",
             days: [

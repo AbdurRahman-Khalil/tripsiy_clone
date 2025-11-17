@@ -4,7 +4,7 @@ import { toast } from "react-hot-toast";
 import emailjs from "@emailjs/browser";
 
 import { FloatingField } from "./FloatingField";
-import { Loader } from "./Loader";
+import { Loader } from "../../custom/Loader";
 
 
 export const ContactForm = () => {
@@ -52,6 +52,7 @@ export const ContactForm = () => {
         <form onSubmit={handleSubmit} className="w-full min-[801px]:w-[617px] max-w-full flex flex-col gap-6">
 
             <FloatingField
+                fieldStyles="w-full h-[73px] pl-5 pt-4"
                 label="Name"
                 type="text"
                 name="name"
@@ -60,6 +61,7 @@ export const ContactForm = () => {
             />
 
             <FloatingField
+                fieldStyles="w-full h-[73px] pl-5 pt-4"
                 label="Email"
                 type="email"
                 name="email"

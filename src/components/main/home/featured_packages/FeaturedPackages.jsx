@@ -1,5 +1,7 @@
 import useStore from "../../../../store/store";
+
 import { FeaturedPackage } from "./FeaturedPackage";
+
 
 
 export const FeaturedPackages = () => {
@@ -8,9 +10,9 @@ export const FeaturedPackages = () => {
     const findPackageByTitle = (title) =>
         allPackages.find(item => item.titles.some(t => t === title));
 
-    const packageNames = ["Dubai", "Bali", "Cappadocia", "Greece"];
+    const packageTitles = ["Dubai", "Bali", "Cappadocia", "Greece"];
 
-    const [dubai, bali, cappadocia, greece] = packageNames.map(findPackageByTitle);
+    const [dubai, bali, cappadocia, greece] = packageTitles.map(findPackageByTitle);
 
     const featPackages = [
         {

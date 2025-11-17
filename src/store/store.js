@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-import { devtools, persist } from "zustand/middleware";
+import { devtools } from "zustand/middleware";
 
 import { packagesData } from "./data.js";
 
@@ -11,11 +11,7 @@ const Store = () => ({
 });
 
 const useStore = create(
-    devtools(
-        persist(Store, {
-            name: "store"
-        })
-    )
+    devtools(Store)
 );
 
 

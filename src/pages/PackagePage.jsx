@@ -2,11 +2,13 @@ import { useEffect } from "react";
 
 import { useParams } from "react-router-dom";
 
+import { Hero } from "../components/main/package_page/Hero";
+import { PackageDetails } from "../components/main/package_page/PackageDetails";
+
 import useStore from "../store/store";
 
 import generateSlug from "../utils/generateSlug";
-import { Hero } from "../components/main/package_page/Hero";
-import { PackageDetails } from "../components/main/package_page/PackageDetails";
+
 
 
 export const PackagePage = () => {
@@ -23,7 +25,9 @@ export const PackagePage = () => {
 
 
     if (!openedPackage) {
-        return <div>Package not found</div>;
+        return <div className="min-h-[100dvh] flex justify-center items-center text-5xl -mt-10">
+            {`Package not found :(`}
+        </div>;
     }
 
     return (
@@ -34,6 +38,7 @@ export const PackagePage = () => {
                 description={openedPackage?.description}
             />
             <PackageDetails
+                id={openedPackage?.id}
                 title={openedPackage?.titles[0]}
                 price={openedPackage?.price}
                 ratings={openedPackage?.ratings}

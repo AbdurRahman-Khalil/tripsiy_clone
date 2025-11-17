@@ -37,6 +37,7 @@ export const Navbar = () => {
                     <img src={searchIcon} alt="search icon" />
                 </button>
                 <Button
+                    btnDestination="/packages"
                     btnStyles="w-[121px] h-[44px] rounded-[10px] bg-[#F49C0B] hover:bg-[hsl(37,91%,59%)] shadow-md font-bold leading-[100%] tracking-[0.5%] text-white transition duration-200 ease-linear"
                     btnText="Book now"
                 />

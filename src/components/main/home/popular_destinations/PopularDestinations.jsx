@@ -9,9 +9,9 @@ export const PopularDestinations = () => {
     const findPackageByTitle = (title) =>
         allPackages.find(item => item.titles.some(t => t === title));
 
-    const packageNames = ["Bali", "Cappadocia", "Paris", "Dubai", "Maldives", "Kyoto"];
+    const packageTitles = ["Bali", "Cappadocia", "Paris", "Dubai", "Maldives", "Kyoto"];
     
-    const [bali, cappadocia, paris, dubai, maldives, kyoto] = packageNames.map(findPackageByTitle);
+    const [bali, cappadocia, paris, dubai, maldives, kyoto] = packageTitles.map(findPackageByTitle);
 
     const popDestinations = [
         {

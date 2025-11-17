@@ -53,7 +53,7 @@
 
   /* About */
   /* About-Hero */
-  #about-hero {
+  #about-hero-bg {
     min-height: 550px;
     background-image: url("./assets/images/about_us/about_hero_bg.jpg");
     background-size: cover;
@@ -62,7 +62,7 @@
 
   /* Destinations */
   /* Destinations-Hero */
-  #destinations-hero {
+  #destinations-hero-bg {
     min-height: 610px;
     background-image: url("./assets/images/destinations/destinations_hero_bg.jpg");
     background-size: cover;
@@ -73,6 +73,39 @@
   .featured-destination-card-text-bg {
     background: linear-gradient(to bottom, transparent, hsla(0, 0%, 0%, 0), hsla(0, 0%, 0%, 0.2), hsla(0, 0%, 0%, 0.8));
   }
+
+  @keyframes enter {
+    from {
+      opacity: 0;
+      transform: translateY(-10px) scale(0.95);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes leave {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+    }
+  }
+
+  .animate-enter {
+    animation: enter 0.25s ease-out forwards;
+  }
+
+  .animate-leave {
+    animation: leave 0.2s ease-in forwards;
+  }
+
 
   /* Packages */
   /* Packages-Hero */
@@ -90,6 +123,26 @@
   .no-scrollbar {
     -ms-overflow-style: none;
     scrollbar-width: none;
+  }
+
+  /* Book Now */
+  /* You can also style pseudo-elements for some browser-specific components,
+   though this support varies greatly across browsers. */
+  input[type="date"]::-webkit-calendar-picker-indicator {
+    /* Example for Webkit browsers */
+    filter: invert(1);
+    cursor: pointer;
+  }
+
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
   }
 
   /* Services */

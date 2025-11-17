@@ -6,7 +6,7 @@ import generateSlug from "../../../../utils/generateSlug";
 
 
 
-export const FeaturedPackage = ({ img, title, duration, price }) => {
+export const YMLItem = ({ img, title, duration, price }) => {
     const sluggedTitle = generateSlug(title);
 
     return (
@@ -30,7 +30,7 @@ export const FeaturedPackage = ({ img, title, duration, price }) => {
                     <Button
                         btnDestination={`/packages/${sluggedTitle}`}
                         btnStyles="w-[166px] h-[34px] rounded-[10px] bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] shadow text-[13px] font-semibold tracking-[0.5%] text-white transition duration-200 ease-linear"
-                        btnText="Book now"
+                        btnText="View Details"
                     />
                 </div>
             </div>
