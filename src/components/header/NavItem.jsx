@@ -7,8 +7,10 @@ export const NavItem = ({ navItemDest, navItemTitle }) => {
             <NavLink
                 to={navItemDest}
                 className={({ isActive }) =>
-                    `font-medium transition duration-200 ease-linear 
-                        ${isActive ? "text-[#F49C0B]" : "text-[#0B0A0A] hover:text-[#F49C0B]"
+                    `transition duration-200 ease-linear 
+                        ${isActive
+                        ? "text-[#F49C0B] font-semibold"
+                        : "text-[#0B0A0A] hover:text-[#F49C0B] font-medium"
                     }`
                 }
             >

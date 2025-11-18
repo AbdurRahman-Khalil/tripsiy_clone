@@ -1,46 +1,63 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { Logo } from "./Logo";
-import { NavItem } from "./NavItem";
-import { Button } from "../custom/Button";
+import { NavbarMenu } from "./NavbarMenu";
+import { NavbarActions } from "./NavbarActions";
+import { AnimatedHamburger } from "./AnimatedHamburger";
 
-import searchIcon from "../../assets/svgs/home/search_icon.svg";
 
 
 export const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-            setNavbar(true)
+    useEffect(() => {
+        const scrollHandler = () => setNavbar(window.scrollY > 50);
+        window.addEventListener("scroll", scrollHandler);
 
-        } else {
-            setNavbar(false);
-        }
-    });
-    
+        return () => window.removeEventListener("scroll", scrollHandler);
+    }, []);
+
 
     return (
-        <nav id="navbar" className={`max-w-[1440px] ${navbar ? "h-[75px]" : "h-[100px]"} transition-all duration-200 ease-linear mx-auto flex justify-between items-center`}>
+        <nav
+            id="navbar"
+            className={`max-w-[1440px] mx-auto
+                ${navbar ? "h-[75px]" : "h-[100px]"} 
+                transition-all duration-200 ease-linear flex justify-between items-center px-5
+            `}
+        >
             <Logo logoSize={131} />
-            <ul className="flex items-center gap-8">
-                <NavItem navItemDest="/" navItemTitle="Home" />
-                <NavItem navItemDest="/about-us" navItemTitle="About Us" />
-                <NavItem navItemDest="/destinations" navItemTitle="Destinations" />
-                <NavItem navItemDest="/packages" navItemTitle="Packages" />
-                <NavItem navItemDest="/services" navItemTitle="Services" />
-                <NavItem navItemDest="/contact-us" navItemTitle="Contact Us" />
-            </ul>
 
-            <div className="flex items-center gap-16">
-                <button>
-                    <img src={searchIcon} alt="search icon" />
-                </button>
-                <Button
-                    btnDestination="/packages"
-                    btnStyles="w-[121px] h-[44px] rounded-[10px] bg-[#F49C0B] hover:bg-[hsl(37,91%,59%)] shadow-md font-bold leading-[100%] tracking-[0.5%] text-white transition duration-200 ease-linear"
-                    btnText="Book now"
+            {/* Desktop Menu */}
+            <div className="hidden min-[1110px]:flex">
+                <NavbarMenu />
+            </div>
+
+            {/* Desktop Actions */}
+            {/* <div className="hidden min-[1110px]:flex"> */}
+            <NavbarActions />
+            {/* </div> */}
+
+            {/* Mobile Hamburger */}
+            <div className="min-[1110px]:hidden">
+                <AnimatedHamburger
+                    open={menuOpen}
+                    onToggle={() => setMenuOpen((prev) => !prev)}
                 />
+            </div>
+
+            {/* Mobile Dropdown Menu */}
+            <div
+                className={`min-[1110px]:hidden fixed left-0 w-full bg-white transition-all duration-300 py-10
+                    ${navbar ? "top-[75px]" : "top-[100px]"} shadow-md
+                    ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}
+                `}
+            >
+                <NavbarMenu direction="col" gap="gap-8" onClick={() => setMenuOpen(false)} />
+                {/* <div className="mt-4 pb-6 flex flex-col items-center gap-4">
+                    <NavbarActions direction="col" center />
+                </div> */}
             </div>
         </nav>
     );

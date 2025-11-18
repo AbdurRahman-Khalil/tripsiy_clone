@@ -257,11 +257,14 @@
     }
   }
 
-
-
-
   /* Footer */
   .footer-bg-gradient {
-    background: linear-gradient(to bottom right, hsla(40, 84%, 83%), hsla(40, 84%, 83%, 0.6), hsla(34, 100%, 97%, 0.8), hsla(34, 100%, 97%));
+    background: linear-gradient(to bottom right, #F8E0B0, #FFF8EF);
   }
 }
+
+
+/* hsla(40, 84%, 83%),
+hsla(40, 84%, 83%, 0.6),
+hsla(34, 100%, 97%, 0.8),
+hsla(34, 100%, 97%) */
