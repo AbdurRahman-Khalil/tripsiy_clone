@@ -6,7 +6,8 @@ import emailjs from "@emailjs/browser";
 import { FloatingField } from "../../contact_us/FloatingField";
 import { Loader } from "../../../custom/Loader";
 
-import generateRandomId from "../../../../utils/generateRandomId"
+import generateRandomId from "../../../../utils/generateRandomId";
+import getCurrentDate from "../../../../utils/getCurrentDate";
 
 
 
@@ -33,6 +34,7 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
             numberOfTravelers: numberOfTravelers,
             packageTitle: packageTitle,
             packagePrice: packagePrice,
+            time: getCurrentDate(),
         };
 
         try {

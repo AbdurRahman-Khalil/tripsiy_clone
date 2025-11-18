@@ -6,6 +6,9 @@ import emailjs from "@emailjs/browser";
 import { FloatingField } from "./FloatingField";
 import { Loader } from "../../custom/Loader";
 
+import getCurrentDate from "../../../utils/getCurrentDate";
+
+
 
 export const ContactForm = () => {
     const [name, setName] = useState("");
@@ -23,7 +26,7 @@ export const ContactForm = () => {
             name: name,
             email: email,
             message: message,
-            subject: "New Contact Us Message",
+            time: getCurrentDate(),
         };
 
         try {
@@ -84,7 +87,7 @@ export const ContactForm = () => {
                     ${loading ? "opacity-80 cursor-not-allowed" : ""} flex justify-center items-center gap-2.5`}
             >
                 <span>{loading ? "Sending" : "Send Message"}</span>
-                <span>{loading && <Loader/>}</span>
+                <span>{loading && <Loader />}</span>
             </button>
         </form>
     );
