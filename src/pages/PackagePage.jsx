@@ -21,7 +21,7 @@ export const PackagePage = () => {
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, []);
+    }, [slug]);
 
 
     if (!openedPackage) {
@@ -29,6 +29,7 @@ export const PackagePage = () => {
             {`Package not found :(`}
         </div>;
     }
+
 
     return (
         <div id="package-page">

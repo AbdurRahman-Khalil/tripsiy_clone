@@ -5,7 +5,6 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import { PackagesFilter } from './packages_filter/PackagesFilter';
 import { DestinationCard } from './DestinationCard';
-import { Button } from '../../custom/Button';
 
 import useStore from "../../../store/store";
 
@@ -72,56 +71,62 @@ export const AllDestinations = () => {
 
 
     return (
-        <section id="all-destinations" className="max-w-[1440px] mx-auto px-8 md:px-12 min-[1025px]:]:px-16 py-[4.5em]">
-            <h2 className="text-4xl font-semibold tracking-[0.5%] text-center">
+        <section
+            id="all-destinations"
+            className="max-w-[1440px] mx-auto px-6 min-[431px]:px-9 md:px-12 lg:px-16 py-[4.5em]"
+        >
+            <h2 className="text-[1.95rem] min-[431px]:text-[2.1rem] md:text-4xl font-semibold tracking-[0.5%] text-center">
                 Destinations
             </h2>
             <PackagesFilter
-                filterStyles="flex justify-center gap-7 flex-wrap mt-11 "
-                filterBtnOneStyles="bg-[#D9D9D9] min-w-[172px] h-[60px] rounded-xl text-[#2B2B2B] border border-[hsl(0,0%,0%,0.2)] pr-2.5 pl-[1.15em]"
-                filterBtnTwoStyles="bg-[#D9D9D9] w-[280px] min-[400px]:w-[330px] min-[480px]:w-[400px] min-[580px]:min-w-[482px] h-[60px] rounded-xl text-[#2B2B2B] border border-[hsl(0,0%,0%,0.2)] pr-2.5 pl-[1.15em]"
+                filterStyles="flex justify-center items-center gap-7 flex-wrap mt-11"
+                filterBtnOneStyles="bg-[#D9D9D9] min-w-[285px] min-[392px]:min-w-[340px] min-[472px]:min-w-[172px] h-[60px] rounded-xl text-[#2B2B2B] border border-[hsl(0,0%,0%,0.2)] pr-2.5 pl-[1.15em]"
+                filterBtnTwoStyles="bg-[#D9D9D9] min-w-[285px] min-[392px]:min-w-[340px] min-[472px]:min-w-[200px] min-[742px]:min-w-[270px] min-[846px]:min-w-[350px] min-[978px]:min-w-[482px] h-[60px] rounded-xl text-[#2B2B2B] border border-[hsl(0,0%,0%,0.2)] pr-2.5 pl-[1.15em]"
                 filterBtnVariant="dark_gray"
                 selectedRegion={selectedRegion}
                 onRegionChange={setSelectedRegion}
                 selectedCategory={selectedCategory}
                 onCategoryChange={setSelectedCategory}
                 onSearchClick={handleSearch}
+                isFiltered={isFiltered}
+                onResetClick={handleReset}
             />
 
-            {isFiltered && (
-                <div className="text-center mt-8 space-y-4">
-                    {count > 0 ? (
-                        <p className="text-lg text-gray-800">
-                            Displaying {count} destination{count > 1 ? 's' : ''} based on your filters.
-                        </p>
-                    ) : (
-                        <p className="text-lg text-gray-600">
-                            No destinations found on filters, please try other filters.
-                        </p>
-                    )}
-
-                    <Button
-                        btnStyles="bg-gray-500 hover:bg-gray-700 text-white w-auto px-6 h-[50px] rounded-[10px] shadow-lg text-lg font-semibold tracking-[0.5%] transition duration-200 ease-linear"
-                        btnText="Reset Filters"
-                        onClick={handleReset}
-                    />
-                </div>
-            )}
-
-            <motion.div id="all-destinations-container" layout className="flex justify-center items-center flex-wrap gap-x-10 gap-y-12 mt-20">
-                <AnimatePresence>
-                    {
-                        packagesToDisplay.map(pkg => (
-                            <DestinationCard
-                                key={pkg?.id}
-                                img={pkg?.images[0].url}
-                                title={pkg?.titles[0]}
-                                description={pkg?.description}
-                            />
-                        ))
-                    }
-                </AnimatePresence>
-            </motion.div>
+            <div
+                className="space-y-10 sm:space-y-11 mt-[4.5em] sm:mt-[5em]"
+            >
+                {isFiltered && (
+                    <div className="text-center">
+                        {count > 0 ? (
+                            <p className="text-[17px] sm:text-lg text-gray-800">
+                                Displaying {count} destination{count > 1 ? 's' : ''} based on your filters.
+                            </p>
+                        ) : (
+                            <p className="text-[17px] sm:text-lg text-gray-600">
+                                No destinations found on filters, please try other filters.
+                            </p>
+                        )}
+                    </div>
+                )}
+                <motion.div
+                    id="all-destinations-container"
+                    className="flex justify-center items-center flex-wrap gap-x-10 gap-y-12 max-[775px]:gap-x-8 max-[775px]:gap-y-11 max-[743px]:gap-y-10 max-[389px]:gap-y-9"
+                    layout
+                >
+                    <AnimatePresence>
+                        {
+                            packagesToDisplay.map(pkg => (
+                                <DestinationCard
+                                    key={pkg?.id}
+                                    img={pkg?.images[0].url}
+                                    title={pkg?.titles[0]}
+                                    description={pkg?.description}
+                                />
+                            ))
+                        }
+                    </AnimatePresence>
+                </motion.div>
+            </div>
         </section>
     );
 };

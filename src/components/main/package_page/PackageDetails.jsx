@@ -48,7 +48,7 @@ export const PackageDetails = ({
 
     return (
         <section id="package-details" className="bg-[#FAFAFA]">
-            <div className="max-w-[1440px] mx-auto px-7 sm:px-10 md:px-16 py-[3.75em]">
+            <div className="max-w-[1440px] mx-auto px-6 min-[431px]:px-9 md:px-12 lg:px-16 py-[3.75em]">
                 <div className="flex justify-between items-center max-[660px]:flex-col max-[660px]:items-start max-[660px]:gap-y-5">
                     <h2 className="text-4xl font-semibold tracking-[0.3%]">{title}</h2>
                     <p className="text-lg text-[#777777] tracking-[0.5%]">
@@ -70,7 +70,7 @@ export const PackageDetails = ({
                         <p className="text-xl tracking-[0.5%] text-[#777777] mt-2">{toSentence}</p>
                     </div>
                     <Button
-                        btnStyles="min-w-[263px] h-[69px] self-end rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] text-[22px] font-semibold tracking-[0.5%] text-white transition duration-200 ease-linear"
+                        btnStyles="min-w-[203px] h-[53px] min-[520px]:min-w-[213px] min-[520px]:h-[58px] min-[620px]:min-w-[223px] min-[620px]:h-[60px] min-[720px]:min-w-[243px] min-[720px]:h-[64px] min-[820px]:min-w-[263px] min-[820px]:h-[69px] self-end rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] text-[16.75px] min-[520px]:text-[17.5px] min-[620px]:text-[18.5px] min-[720px]:text-[20px] min-[820px]:text-[22px] font-medium min-[720px]:font-semibold tracking-[0.5%] text-white transition-all duration-200 ease-linear"
                         btnText="Book This Package"
                         onClick={handleClick}
                     />

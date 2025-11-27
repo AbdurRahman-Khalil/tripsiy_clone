@@ -63,13 +63,13 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
 
 
     return (
-        <section id="book-now-form" className="max-w-[1440px] mx-auto bg-white mt-14 px-8 md:px-10 py-10 shadow rounded-[20px]">
+        <section id="book-now-form" className="max-w-[1440px] mx-auto bg-white mt-14 px-[1.6em] min-[425px]:px-7 sm:px-8 min-[820px]:px-10 py-10 shadow rounded-[20px]">
             <h3 className="text-3xl font-medium tracking-[0.5%] text-[#2C2C2C] text-center mb-10">
                 Book Your Trip Now
             </h3>
             <form onSubmit={handleSubmit}>
                 <FloatingField
-                    fieldStyles="w-full h-[80px] pl-5 pt-4"
+                    fieldStyles="w-full h-[70px] min-[820px]:h-[80px] pl-5 pt-4"
                     label="Name"
                     type="text"
                     name="name"
@@ -77,9 +77,9 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
                     setValue={setName}
                 />
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-7 min-[820px]:gap-8 mt-6 sm:mt-7 min-[820px]:mt-8">
                     <FloatingField
-                        fieldStyles="w-full h-[80px] pl-5 pt-4"
+                        fieldStyles="w-full h-[70px] min-[820px]:h-[80px] pl-5 pt-4"
                         label="Email"
                         type="email"
                         name="email"
@@ -87,7 +87,7 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
                         setValue={setEmail}
                     />
                     <FloatingField
-                        fieldStyles="w-full h-[80px] pl-5 pt-4"
+                        fieldStyles="w-full h-[70px] min-[820px]:h-[80px] pl-5 pt-4"
                         label="Phone Number"
                         type="number"
                         name="phoneNumber"
@@ -95,14 +95,14 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
                         setValue={setPhoneNumber}
                     />
                     <FloatingField
-                        fieldStyles="w-full h-[80px] px-5"
+                        fieldStyles="w-full h-[70px] min-[820px]:h-[80px] px-5"
                         type="date"
                         name="bookingDate"
                         value={bookingDate}
                         setValue={setBookingDate}
                     />
                     <FloatingField
-                        fieldStyles="w-full h-[80px] pl-5 pt-4"
+                        fieldStyles="w-full h-[70px] min-[820px]:h-[80px] pl-5 pt-4"
                         label="Number of Travelers"
                         type="number"
                         name="numberOfTravelers"
@@ -110,12 +110,12 @@ export const BookNow = ({ packageId, packageTitle, packagePrice }) => {
                         setValue={setNumberOfTravelers}
                     />
                 </div>
-                <div className="mt-16 space-y-2.5">
+                <div className="mt-14 sm:mt-16 space-y-2.5">
                     <button
                         type="submit"
                         disabled={loading}
-                        className={`w-[263px] h-[69px] mx-auto rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] 
-                                        text-[1.375rem] font-medium tracking-[0.5%] text-white transition duration-200 ease-linear
+                        className={`w-[228px] h-[60px] min-[425px]:w-[243px] min-[425px]:h-[63px] sm:w-[250px] sm:h-[66px] min-[820px]:w-[263px] min-[820px]:h-[69px] mx-auto rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] 
+                                        text-[1.2rem] min-[425px]:text-[1.25rem] sm:text-[1.325rem] min-[820px]:text-[1.375rem] font-medium tracking-[0.5%] text-white transition-all duration-200 ease-linear
                                         ${loading ? "opacity-80 cursor-not-allowed" : ""} flex justify-center items-center gap-2.5`}
                     >
                         <span>{loading ? "Booking" : "Confirm Booking"}</span>

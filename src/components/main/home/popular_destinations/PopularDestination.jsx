@@ -9,12 +9,13 @@ export const PopularDestination = ({ title, description, img }) => {
     const sluggedTitle = generateSlug(title);
 
     return (
-        <Link to={`/packages/${sluggedTitle}`}>
-            <div className="popular-destination group relative w-[360px] max-w-full h-[460px] rounded-2xl overflow-hidden">
-                <img
-                    className="group-hover:scale-110 max-w-full min-h-full object-cover object-center rounded-2xl transition duration-200 ease-linear"
-                    src={img} alt={`${title}' image`}
-                />
+
+        <div className="popular-destination group relative w-[360px] max-[1287px]:w-[350px] max-[1241px]:w-[340px] max-[1211px]:flex-grow h-[460px] rounded-2xl shadow-lg overflow-hidden">
+            <img
+                className="group-hover:scale-110 max-w-full min-h-full object-cover object-center rounded-2xl transition duration-200 ease-linear"
+                src={img} alt={`${title}' image`}
+            />
+            <Link to={`/packages/${sluggedTitle}`}>
                 <div className="text-white absolute inset-0 rounded-2xl bg-black/30 flex justify-center items-end">
                     <div className="popular-destination-card-text-bg text-center rounded-b-2xl pb-5">
                         <p className="text-[2rem] font-semibold tracking-[0.5%] leading-10">{title}</p>
@@ -26,7 +27,7 @@ export const PopularDestination = ({ title, description, img }) => {
                         />
                     </div>
                 </div>
-            </div>
-        </Link>
-    )
-}
+            </Link>
+        </div>
+    );
+};

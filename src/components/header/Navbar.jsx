@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 import { Logo } from "./Logo";
 import { NavbarMenu } from "./NavbarMenu";
@@ -11,11 +11,30 @@ export const Navbar = () => {
     const [navbar, setNavbar] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const menuRef = useRef(null);
+    const burgerRef = useRef(null);
+
     useEffect(() => {
         const scrollHandler = () => setNavbar(window.scrollY > 50);
         window.addEventListener("scroll", scrollHandler);
 
         return () => window.removeEventListener("scroll", scrollHandler);
+    }, []);
+
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (
+                menuRef.current &&
+                !menuRef.current.contains(e.target) &&
+                burgerRef.current &&
+                !burgerRef.current.contains(e.target)
+            ) {
+                setMenuOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
     }, []);
 
 
@@ -40,7 +59,7 @@ export const Navbar = () => {
             {/* </div> */}
 
             {/* Mobile Hamburger */}
-            <div className="min-[1110px]:hidden">
+            <div className="min-[1110px]:hidden" ref={burgerRef}>
                 <AnimatedHamburger
                     open={menuOpen}
                     onToggle={() => setMenuOpen((prev) => !prev)}
@@ -49,6 +68,7 @@ export const Navbar = () => {
 
             {/* Mobile Dropdown Menu */}
             <div
+                ref={menuRef}
                 className={`min-[1110px]:hidden fixed left-0 w-full bg-white transition-all duration-300 py-10
                     ${navbar ? "top-[75px]" : "top-[100px]"} shadow-md
                     ${menuOpen ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-5 pointer-events-none"}

@@ -10,7 +10,6 @@ import generateSlug from '../../../utils/generateSlug';
 export const DestinationCard = ({ img, title, description }) => {
     const sluggedTitle = generateSlug(title);
 
-
     return (
         <motion.div
             layout
@@ -28,10 +27,10 @@ export const DestinationCard = ({ img, title, description }) => {
                 // },
                 // delay: 0.1
             }}
-            className="w-[330px] h-[410px] rounded-2xl shadow-lg bg-white group overflow-hidden"
+            className="w-[330px] max-[1197px]:w-[320px] max-[1167px]:flex-grow h-[410px] rounded-2xl shadow-lg bg-white group overflow-hidden transition-all duration-200 ease-linear"
         >
             <Link to={`/packages/${sluggedTitle}`}>
-                <div className="w-[330px] h-[258px] shadow-md overflow-hidden">
+                <div className="w-full h-[258px] shadow-md overflow-hidden">
                     <img
                         className="w-full h-full object-cover object-center rounded-t-2xl group-hover:scale-110 transition duration-200 ease-linear"
                         src={img}
@@ -41,7 +40,7 @@ export const DestinationCard = ({ img, title, description }) => {
             </Link>
             <div className="px-[1.15em] py-2.5 text-center">
                 <p className="text-lg text-start font-semibold tracking-[0.5%] text-[#2B2B2B] mb-0.5">{title}</p>
-                <p className="text-xs text-start tracking-[0.5%] text-[#777777]">{description}</p>
+                <p className="text-xs text-start tracking-[0.5%] text-[#777777] line-clamp-2">{description}</p>
                 <Button
                     btnDestination={`/packages/${sluggedTitle}`}
                     btnStyles="bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] w-[186px] h-[41px] rounded-[10px] shadow-lg text-sm font-medium tracking-[0.5%] text-white mt-4 transition duration-200 ease-linear"

@@ -5,7 +5,7 @@ export const Hero = () => {
         <section id="packages-hero">
             <div id="packages-hero-bg" className="relative">
                 <div className="absolute inset-0 flex justify-center items-center bg-gradient-to-r from-[hsla(0,0%,0%,0.7)] to-[hsla(0,0%,0%,0.3)]">
-                    <div className="text-center px-9 sm:px-14 md:px-20">
+                    <div className="text-center px-6 min-[431px]:px-9 sm:px-[4.5em]">
                         <h1 id="hero-heading" className="text-[2.5rem] font-bold tracking-[0.5%] text-white">
                             Find Your Perfect Travel Package
                         </h1>

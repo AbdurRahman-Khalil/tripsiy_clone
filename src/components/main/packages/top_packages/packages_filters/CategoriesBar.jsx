@@ -40,7 +40,7 @@ export const CategoriesBar = ({
                         key={category}
                         onClick={() => onSelect?.(category)}
                         className={`
-                                text-xl font-medium px-6 py-2 shrink-0 rounded-md
+                                text-[1.165rem] min-[431px]:text-[1.225rem] min-[672px]:text-[1.25rem] font-medium px-6 py-2 shrink-0 rounded-md
                                 transition-all duration-300
                                 ${selectedValue === category
                                 ? "bg-[#F6B15C] text-[#2B2B2B]"

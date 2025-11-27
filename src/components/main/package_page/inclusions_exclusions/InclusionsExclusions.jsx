@@ -4,7 +4,7 @@ import { Exclusions } from './Exclusions';
 
 export const InclusionsExclusions = ({ inclusionsArray, exclusionsArray }) => {
     return (
-        <div className="flex justify-between items-start max-[450px]:flex-col max-[450px]:gap-10 mt-12">
+        <div className="flex items-start max-[523px]:flex-col max-[523px]:gap-8 mt-12">
             <Inclusions inclusionsArray={inclusionsArray} />
             <Exclusions exclusionsArray={exclusionsArray} />
         </div>

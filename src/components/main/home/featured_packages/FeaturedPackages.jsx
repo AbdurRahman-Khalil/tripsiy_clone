@@ -47,23 +47,24 @@ export const FeaturedPackages = () => {
 
 
     return (
-        <section id="featured-packages" className="bg-[#FAFAFA] px-20 pt-12 pb-16 mt-14">
-            <div className="container mx-auto px-4">
-                <h2 className="text-3xl font-bold text-center text-gray-800 mb-10">
-                    Featured Packages
-                </h2>
+        <section
+            id="featured-packages"
+            className="bg-[#FAFAFA] px-6 min-[431px]:px-9 sm:px-14 pt-12 pb-16 mt-14"
+        >
+            <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
+                Featured Packages
+            </h2>
 
-                <div className="flex justify-center flex-wrap gap-x-5 gap-y-8">
-                    {featPackages.map((packageItem) => (
-                        <FeaturedPackage 
-                            key={packageItem.id}
-                            img={packageItem.img}
-                            title={packageItem.title}
-                            duration={packageItem.duration}
-                            price={packageItem.price}
-                        />
-                    ))}
-                </div>
+            <div className="flex justify-center flex-wrap min-[1082px]:gap-x-5 min-[1082px]:gap-y-8 max-[1081px]:gap-x-8 max-[1081px]:gap-y-10 max-[389px]:gap-y-9">
+                {featPackages.map((packageItem) => (
+                    <FeaturedPackage
+                        key={packageItem.id}
+                        img={packageItem.img}
+                        title={packageItem.title}
+                        duration={packageItem.duration}
+                        price={packageItem.price}
+                    />
+                ))}
             </div>
         </section>
     );

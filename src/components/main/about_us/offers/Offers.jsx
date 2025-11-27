@@ -49,9 +49,12 @@ export const Offers = () => {
 
 
     return (
-        <section id="about-offers" className="max-w-[1440px] mx-auto bg-[#FFF6EC] px-20 py-[4.5em]">
-            <h2 className="text-4xl font-semibold tracking-[0.3%] text-[#2B2B2B] text-center">What We Offer</h2>
-            <div className="offers-container flex justify-center items-center flex-wrap gap-x-14 gap-y-20 mt-16">
+        <section
+            id="about-offers"
+            className="max-w-[1440px] mx-auto bg-[#FFF6EC] px-6 min-[431px]:px-9 md:px-12 lg:px-20 py-[4.5em]"
+        >
+            <h2 className="text-[1.95rem] min-[431px]:text-[2.1rem] md:text-4xl font-semibold tracking-[0.3%] text-[#2B2B2B] text-center">What We Offer</h2>
+            <div className="offers-container flex justify-center items-center flex-wrap gap-x-14 gap-y-20 max-[1114px]:gap-y-14 max-[689px]:gap-y-10 mt-11 min-[431px]:mt-12 md:mt-14">
                 {
                     offersData.map(offer => (
                         <Offer

@@ -4,7 +4,11 @@ import qouteIcon from "../../../../assets/svgs/home/qoute.svg";
 export const Testimonial = ({ testimonial, testimoni, country, countryFlag }) => {
     return (
         <div className="max-w-2xl text-center mx-auto relative">
-            <img className="absolute left-0 -top-5" src={qouteIcon} alt="qoute icon" />
+            <img
+                className="absolute left-0 -top-5"
+                src={qouteIcon}
+                alt="qoute icon"
+            />
             <p
                 style={{ fontFamily: "Playfair Display" }}
                 className="testimonial-text text-[1.625rem] font-medium text-[#2B2B2B] tracking-[0.5%]"

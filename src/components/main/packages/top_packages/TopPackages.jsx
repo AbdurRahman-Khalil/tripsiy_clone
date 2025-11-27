@@ -69,7 +69,10 @@ export const TopPackages = () => {
 
 
     return (
-        <section id="top-packages" className="bg-[#FEFEFF]">
+        <section
+            id="top-packages"
+            className="bg-[#FEFEFF]"
+        >
             <PackagesFilter
                 selectedRegion={selectedRegion}
                 onRegionChange={setSelectedRegion}
@@ -81,42 +84,48 @@ export const TopPackages = () => {
                 isFiltered={isFiltered}
             />
 
-            <div className="max-w-[1440px] mx-auto px-16 pt-[3.75em] pb-[4.5em]">
-                <h2 className="text-4xl font-semibold tracking-[0.5%] text-center">
+            <div
+                className="max-w-[1440px] mx-auto px-6 min-[431px]:px-9 md:px-12 lg:px-16 pt-[3.75em] pb-[4.5em]"
+            >
+                <h2 className="text-[1.95rem] min-[431px]:text-[2.1rem] md:text-4xl font-semibold tracking-[0.5%] text-center">
                     Top Packages
                 </h2>
 
-                {isFiltered && (
-                    <div className="text-center mt-8 space-y-4">
-                        {count > 0 ? (
-                            <p className="text-lg text-gray-800">
-                                Displaying {count} package{count > 1 ? 's' : ''} based on your filters.
-                            </p>
-                        ) : (
-                            <p className="text-lg text-gray-600">
-                                No packages found on filters, please try other filters.
-                            </p>
-                        )}
-                    </div>
-                )}
-
-                <motion.div layout className="top-packages-container flex justify-center items-center flex-wrap gap-x-8 gap-y-12 mt-16">
-                    <AnimatePresence>
-                        {
-                            packagesToDisplay.map(pkg => (
-                                <PackageCard
-                                    key={pkg.id}
-                                    img={pkg.images[0].url}
-                                    title={pkg.titles[0]}
-                                    shortDescription={pkg.short_description}
-                                    duration={pkg.about.duration}
-                                    price={pkg.price}
-                                    ratings={pkg.ratings}
-                                />
-                            ))
-                        }
-                    </AnimatePresence>
-                </motion.div>
+                <div className="space-y-10 sm:space-y-11 mt-10 min-[431px]:mt-12 md:mt-14">
+                    {isFiltered && (
+                        <div className="text-center">
+                            {count > 0 ? (
+                                <p className="text-[17px] sm:text-lg text-gray-800">
+                                    Displaying {count} package{count > 1 ? 's' : ''} based on your filters.
+                                </p>
+                            ) : (
+                                <p className="text-[17px] sm:text-lg text-gray-600">
+                                    No packages found on filters, please try other filters.
+                                </p>
+                            )}
+                        </div>
+                    )}
+                    <motion.div
+                        className="top-packages-container flex justify-center items-center flex-wrap gap-x-10 gap-y-12 max-[775px]:gap-x-8 max-[775px]:gap-y-11 max-[743px]:gap-y-10 max-[389px]:gap-y-9"
+                        layout
+                    >
+                        <AnimatePresence>
+                            {
+                                packagesToDisplay.map(pkg => (
+                                    <PackageCard
+                                        key={pkg.id}
+                                        img={pkg.images[0].url}
+                                        title={pkg.titles[0]}
+                                        shortDescription={pkg.short_description}
+                                        duration={pkg.about.duration}
+                                        price={pkg.price}
+                                        ratings={pkg.ratings}
+                                    />
+                                ))
+                            }
+                        </AnimatePresence>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );

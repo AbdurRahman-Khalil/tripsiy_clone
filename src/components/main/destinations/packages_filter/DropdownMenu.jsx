@@ -46,7 +46,7 @@ export const DropdownMenu = ({
                     } transition-all duration-200`}
                 onClick={() => setIsOpen(!isOpen)}
             >
-                <p className="text-[1.375rem] font-medium tracking-[0.5%] truncate">
+                <p className="text-[1.165rem] min-[431px]:text-[1.225rem] min-[672px]:text-[1.275rem] min-[846px]:text-[1.375rem] font-medium tracking-[0.5%] truncate">
                     {/* {Dropdown Button} */}
                     {selectedValue || btnText}
                 </p>
@@ -62,7 +62,7 @@ export const DropdownMenu = ({
                 <div className="absolute top-full left-0 right-0 mt-2 z-50">
                     <div className="bg-[#D9D9D9]/80 border border-[#505050] rounded-lg shadow-lg overflow-hidden backdrop-blur-[16px]">
                         <div
-                            className="p-3 hover:bg-gray-100 cursor-pointer text-gray-500 italic border-b border-[#505050]"
+                            className="text-[15px] min-[431px]:text-[15.25px] min-[672px]:text-[15.5px] min-[846px]:text-base p-3 hover:bg-gray-100 cursor-pointer text-gray-500 italic border-b border-[#505050]"
                             onClick={() => handleSelectOption('')}
                         >
                             All {btnText}s
@@ -71,7 +71,7 @@ export const DropdownMenu = ({
                             <button
                                 key={index}
                                 onClick={() => handleSelectOption(option)}
-                                className={`w-full text-left px-4 py-3 text-[1.125rem] font-medium tracking-[0.5%] transition-all duration-200
+                                className={`w-full text-left px-4 py-3 text-[1.075rem] min-[431px]:text-[1.09rem] min-[672px]:text-[1.115rem] min-[846px]:text-[1.125rem] font-medium tracking-[0.5%] transition-all duration-200
                                     ${selectedValue === option
                                         ? "bg-[hsl(33,90%,70%)] text-[#2B2B2B]"
                                         : "text-[#2B2B2B] hover:bg-white/55"

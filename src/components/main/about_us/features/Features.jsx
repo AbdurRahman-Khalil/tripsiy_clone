@@ -29,9 +29,14 @@ export const Features = () => {
 
 
     return (
-        <section id="about-features" className="max-w-[1440px] mx-auto px-20 py-[4.5em]">
-            <h2 className="text-4xl font-semibold tracking-[0.3%] text-[#2B2B2B] text-center">Why Choose Us</h2>
-            <div className="features-container flex justify-center items-center gap-24 mt-14">
+        <section
+            id="about-features"
+            className="max-w-[1440px] mx-auto px-6 min-[431px]:px-9 md:px-12 lg:px-20 py-[4.5em]"
+        >
+            <h2 className="text-[1.95rem] min-[431px]:text-[2.1rem] md:text-4xl font-semibold tracking-[0.3%] text-[#2B2B2B] text-center">Why Choose Us</h2>
+            <div
+                className="features-container flex justify-center items-center max-[911px]:flex-wrap gap-24 max-[727px]:gap-16 max-[430px]:gap-14 mt-11 min-[431px]:mt-12 md:mt-14"
+            >
                 {
                     featuresData.map(featureItem => (
                         <Feature

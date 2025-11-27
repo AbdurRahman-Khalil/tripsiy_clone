@@ -26,7 +26,7 @@ export const Gallery = ({ title, galleryImages }) => {
 
 
     return (
-        <div className="gallery mt-12">
+        <div className="package-gallery mt-12">
             <h3 className="text-3xl font-medium tracking-[0.5%] text-[#2C2C2C] mb-6">Gallery</h3>
             <div className="relative overflow-hidden">
                 <button

@@ -23,10 +23,10 @@ export const PackageCard = ({ img, title, shortDescription, duration, price, rat
                     ease: [0.4, 0, 0.2, 1],
                 }
             }}
-            className="w-[320px] h-fit rounded-2xl bg-[#FFFFFF] shadow-md group border border-black/10 overflow-hidden"
+            className="w-[330px] max-[1197px]:w-[320px] max-[1167px]:flex-grow h-fit rounded-2xl bg-[#FFFFFF] shadow-md group border border-black/10 overflow-hidden"
         >
             <Link to={`/packages/${sluggedTitle}`}>
-                <div className="w-[320px] h-[271px] rounded-t-2xl shadow-md overflow-hidden">
+                <div className="w-full h-[271px] rounded-t-2xl shadow-md overflow-hidden">
                     <img
                         className="w-full h-full object-cover object-center rounded-t-2xl group-hover:scale-110 transition duration-200 ease-linear"
                         src={img}

@@ -13,7 +13,7 @@ export const Testimonials = () => {
     const [activeIndex, setActiveIndex] = useState(0);
     const [direction, setDirection] = useState(0);
     const [isAnimating, setIsAnimating] = useState(false);
-    
+
     const testimonialsData = [
         {
             id: 1,
@@ -75,17 +75,19 @@ export const Testimonials = () => {
         }),
     };
 
-    
+
     return (
         <section
             id="testimonials"
-            className="bg-[#FFF8F3] pt-14 pb-[4.5em] px-4 text-center relative overflow-hidden"
+            className="bg-[#FFF8F3] pt-14 pb-[4.5em] px-6 text-center relative overflow-hidden"
         >
             <h1 className="text-4xl font-semibold tracking-[0.5%] text-[#2C2C2C] mb-20">
                 What Our Travelers Say
             </h1>
 
-            <div className="relative h-[200px] flex items-center justify-center overflow-hidden">
+            <div
+                className="relative h-[200px] max-[715px]:h-[215px] max-[495px]:h-[255px] max-[401px]:h-[292px] flex items-center justify-center overflow-hidden"
+            >
                 <AnimatePresence custom={direction} mode="wait">
                     <motion.div
                         key={activeIndex}
@@ -111,11 +113,12 @@ export const Testimonials = () => {
                     <button
                         key={index}
                         onClick={() => handleDotClick(index)}
-                        className={`w-[13px] h-[13px] rounded-full transition-all duration-300 ${
-                            index === activeIndex
+                        className={`w-[13px] h-[13px] rounded-full transition-all duration-300 
+                                ${index === activeIndex
                                 ? "bg-[#F6B15C] w-[30px]"
                                 : "bg-[#EADAC0]"
-                        }`}
+                            }
+                        `}
                     />
                 ))}
             </div>

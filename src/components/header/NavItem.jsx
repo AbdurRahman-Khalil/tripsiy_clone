@@ -1,9 +1,9 @@
 import { NavLink } from "react-router-dom";
 
 
-export const NavItem = ({ navItemDest, navItemTitle }) => {
+export const NavItem = ({ navItemDest, navItemTitle, onClick }) => {
     return (
-        <li>
+        <li onClick={onClick}>
             <NavLink
                 to={navItemDest}
                 className={({ isActive }) =>

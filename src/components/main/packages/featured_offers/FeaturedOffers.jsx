@@ -3,6 +3,7 @@ import useStore from "../../../../store/store";
 import { FeaturedOffer } from "./FeaturedOffer";
 
 
+
 export const FeaturedOffers = () => {
     const allPackages = useStore((state) => state.allPackages);
 
@@ -29,15 +30,19 @@ export const FeaturedOffers = () => {
         },
     ];
 
+    
     return (
-        <section id="packages-featured-offers" className="px-10 pt-[3.75em] pb-[4em]">
-            <h2 className="text-4xl font-semibold tracking-[0.5%] text-center">
+        <section
+            id="packages-featured-offers"
+            className="px-6 min-[431px]:px-9 md:px-12 lg:px-[3.5em] pt-[3.75em] pb-[4em]"
+        >
+            <h2 className="text-[1.95rem] min-[431px]:text-[2.1rem] md:text-4xl font-semibold tracking-[0.5%] text-center">
                 Featured Offers
             </h2>
-            <div className="packages-featured-offers-container flex justify-center items-center flex-wrap gap-8 mt-[4.5em]">
+            <div className="packages-featured-offers-container flex justify-center items-center flex-wrap gap-8 max-[1343px]:gap-10 max-[399px]:gap-9 mt-12 min-[431px]:mt-14 md:mt-16">
                 {
                     featOffers.map(featOffer => (
-                        <FeaturedOffer 
+                        <FeaturedOffer
                             key={featOffer.id}
                             title={featOffer.title}
                             description={featOffer.description}

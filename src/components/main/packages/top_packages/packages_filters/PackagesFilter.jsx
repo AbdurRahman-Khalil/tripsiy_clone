@@ -29,7 +29,7 @@ export const PackagesFilter = ({
 
     
     return (
-        <div className="flex justify-center items-center gap-x-16 gap-y-10 flex-wrap min-h-[137px] bg-gradient-to-r from-[#242424] to-[#2B2B2B] text-white px-7 min-[553px]:px-12 min-[750px]:px-16 py-12">
+        <div className="flex justify-center items-center gap-8 flex-wrap min-h-[137px] bg-gradient-to-r from-[#242424] to-[#2B2B2B] text-white px-6 min-[431px]:px-9 md:px-12 lg:px-16 py-12">
             {/* Category Filter */}
             <CategoriesBar
                 options={categories}
@@ -39,7 +39,7 @@ export const PackagesFilter = ({
 
             {/* Region Filter */}
             <DropdownMenu
-                filterBtnStyles="w-[175px] h-[56px] rounded-lg bg-[#3B3B3B] pr-3 pl-[1.3em]"
+                filterBtnStyles="w-[175px] max-[1221px]:w-[235px] h-[56px] rounded-lg bg-[#3B3B3B] pr-3 pl-[1.3em]"
                 btnText="Region"
                 variant="orange"
                 options={regions}
@@ -59,7 +59,7 @@ export const PackagesFilter = ({
 
             {isFiltered && (
                 <Button
-                    btnStyles="bg-gray-500 hover:bg-gray-700 text-white w-auto px-6 h-[50px] rounded-[10px] shadow-lg text-lg font-semibold tracking-[0.5%] transition duration-200 ease-linear"
+                    btnStyles="bg-gray-500/80 hover:bg-gray-500/65 text-white w-auto px-6 h-[50px] rounded-[10px] shadow-lg text-base min-[672px]:text-[17px] min-[846px]:text-lg font-medium min-[846px]:font-semibold tracking-[0.5%] transition duration-200 ease-linear"
                     btnText="Reset Filters"
                     onClick={onResetClick}
                 />

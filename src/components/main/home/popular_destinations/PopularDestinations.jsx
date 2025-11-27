@@ -54,12 +54,12 @@ export const PopularDestinations = () => {
 
 
     return (
-        <section id="popular-destinations" className="max-w-[1440px] mx-auto px-20 mt-20">
-            <div className="text-center mb-16">
+        <section id="popular-destinations" className="max-w-[1440px] mx-auto px-6 min-[431px]:px-9 sm:px-14 mt-20">
+            <div className="text-center mb-14">
                 <h2 className="text-4xl font-semibold tracking-[0.5%] text-black mb-2.5">Popular Destinations</h2>
                 <p className="text-lg tracking-[0.5%] text-[#2B2B2B]">Explore the most loved travel spots this season.</p>
             </div>
-            <div className="popular-destinations-container flex justify-center flex-wrap gap-10">
+            <div className="popular-destinations-container flex justify-center items-center flex-wrap gap-10 min-[1212px]:max-[1257px]:gap-x-8 min-[828px]:max-[831px]:gap-9 min-[832px]:max-[1211px]:gap-y-11 max-[827px]:gap-11 max-[389px]:gap-10">
                 {popDestinations.map(packageItem => (
                     <PopularDestination
                         key={packageItem.id}

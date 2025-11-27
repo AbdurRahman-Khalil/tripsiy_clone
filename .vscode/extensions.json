@@ -1,5 +1,6 @@
 {
     "recommendations": [
-        "copycatdev.copycat-figma-to-react"
+        "copycatdev.copycat-figma-to-react",
+        "brandonkirbyson.vscode-animations"
     ]
 }
