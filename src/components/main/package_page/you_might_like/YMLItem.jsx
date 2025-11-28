@@ -10,9 +10,9 @@ export const YMLItem = ({ img, title, duration, price }) => {
     const sluggedTitle = generateSlug(title);
 
     return (
-        <div className="w-[320px] shadow-lg rounded-2xl group">
+        <div className="w-[320px] max-[1159px]:w-[310px] max-[1129px]:flex-grow shadow-lg rounded-2xl group">
             <Link to={`/packages/${sluggedTitle}`}>
-                <div className="w-[320px] h-[271px] rounded-t-2xl shadow-md overflow-hidden">
+                <div className="w-full h-[271px] rounded-t-2xl shadow-md overflow-hidden">
                     <img
                         className="w-full min-h-full group-hover:scale-110 object-cover rounded-t-2xl transition duration-200 ease-linear"
                         src={img} alt={`${title}' s image`}

@@ -51,7 +51,7 @@ export const FloatingField = ({
                     ${focused || value
                         ? type === "date"
                             ? "top-4"
-                            : "top-2.5 text-[13.25px] min-[820px]:text-sm text-[hsl(39,79%,50%)]"
+                            : `top-2.5 text-[13.25px] min-[820px]:text-sm text-[hsl(39,79%,50%)] ${textarea && "bg-[#FDFDFD]"}`
                         : textarea
                             ? "top-3.5 text-[18px] sm:text-[19px] min-[820px]:text-xl text-black/40"
                             : type === "date"

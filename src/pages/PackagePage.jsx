@@ -13,6 +13,7 @@ import generateSlug from "../utils/generateSlug";
 
 export const PackagePage = () => {
     const allPackages = useStore((state) => state.allPackages);
+    
     const { slug } = useParams();
 
     const openedPackage = allPackages.find((pkg) =>

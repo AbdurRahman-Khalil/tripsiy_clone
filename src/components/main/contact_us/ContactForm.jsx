@@ -52,10 +52,10 @@ export const ContactForm = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="w-full min-[801px]:w-[617px] max-w-full flex flex-col gap-6">
+        <form onSubmit={handleSubmit} className="w-[617px] max-w-full flex flex-col gap-6">
 
             <FloatingField
-                fieldStyles="w-full h-[73px] pl-5 pt-4"
+                fieldStyles="w-full h-[70px] min-[820px]:h-[73px] pl-5 pt-4"
                 label="Name"
                 type="text"
                 name="name"
@@ -64,7 +64,7 @@ export const ContactForm = () => {
             />
 
             <FloatingField
-                fieldStyles="w-full h-[73px] pl-5 pt-4"
+                fieldStyles="w-full h-[70px] min-[820px]:h-[73px] pl-5 pt-4"
                 label="Email"
                 type="email"
                 name="email"
@@ -82,8 +82,8 @@ export const ContactForm = () => {
             <button
                 type="submit"
                 disabled={loading}
-                className={`self-center w-[263px] h-[69px] rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] 
-                    text-[1.375rem] font-medium tracking-[0.5%] text-white mt-2 transition duration-200 ease-linear
+                className={`self-center w-[228px] h-[60px] min-[425px]:w-[243px] min-[425px]:h-[63px] sm:w-[250px] sm:h-[66px] min-[820px]:w-[263px] min-[820px]:h-[69px] rounded-[10px] shadow-md bg-[#F49C0B] hover:bg-[hsl(37,91%,57%)] 
+                    text-[1.2rem] min-[425px]:text-[1.25rem] sm:text-[1.325rem] min-[820px]:text-[1.375rem] font-medium tracking-[0.5%] text-white mt-2 transition duration-200 ease-linear
                     ${loading ? "opacity-80 cursor-not-allowed" : ""} flex justify-center items-center gap-2.5`}
             >
                 <span>{loading ? "Sending" : "Send Message"}</span>

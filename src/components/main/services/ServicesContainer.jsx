@@ -46,7 +46,7 @@ export const ServicesContainer = () => {
     return (
         <section
             id="services-container"
-            className="max-w-[1440px] mx-auto flex justify-center items-center flex-wrap gap-x-10 gap-y-[4.5em] px-16 py-28"
+            className="max-w-[1440px] mx-auto flex justify-center items-center flex-wrap gap-x-10 gap-y-[4.5em] max-[1050px]:gap-y-[3em] md:max-[1050px]:gap-x-11 max-[767px]:gap-y-[2.85em] max-[569px]:gap-y-[2.65em] max-[430px]:gap-y-[2.5em] max-[389px]:gap-y-[2.3em] px-6 min-[431px]:px-9 md:px-12 lg:px-16 py-20 sm:py-24 md:py-28"
         >
             {
                 servicesData.map(service => (
